@@ -1,0 +1,16 @@
+Lua 5.2.1 build for Android.
+
+Pre-requisites: Android NDK (http://developer.android.com/tools/sdk/ndk/index.html)
+
+Based on the following post: http://www.badlogicgames.com/wordpress/?p=943 (for Lua 5.1.4)
+
+How to build: go to the project folder, open the command line and type: (path to NDK)/ndk-build
+
+Original Lua readme:
+--------------------
+
+This is Lua 5.2.1, released on 08 Jun 2012.
+
+For installation instructions, license details, and
+further information about Lua, see doc/readme.html.
+
