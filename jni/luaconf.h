@@ -203,6 +203,9 @@
 */
 #define LUA_IDSIZE	60
 
+#include <jni.h>
+#include <errno.h>
+#include <android/log.h>
 
 /*
 @@ luai_writestring/luai_writeline define how 'print' prints its results.
@@ -211,7 +214,7 @@
 */
 #if defined(LUA_LIB) || defined(lua_c)
 #include <stdio.h>
-#define luai_writestring(s,l)	fwrite((s), sizeof(char), (l), stdout)
+#define luai_writestring(s,l)	((void)__android_log_print(ANDROID_LOG_INFO, "luaprint", s))
 #define luai_writeline()	(luai_writestring("\n", 1), fflush(stdout))
 #endif
 
@@ -220,7 +223,7 @@
 ** (A format string with one argument is enough for Lua...)
 */
 #define luai_writestringerror(s,p) \
-	(fprintf(stderr, (s), (p)), fflush(stderr))
+	(((void)__android_log_print(ANDROID_LOG_ERROR, "luaerror", s)), fflush(stderr))
 
 
 /*

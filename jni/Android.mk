@@ -4,6 +4,7 @@ include $(CLEAR_VARS)
  
 LOCAL_ARM_MODE  := arm
 LOCAL_MODULE    := lua
+LOCAL_LDLIBS 	+= -llog
 LOCAL_SRC_FILES := lapi.c \
 	lauxlib.c \
 	lbaselib.c \
